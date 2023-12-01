@@ -1,17 +1,22 @@
-import { ConstructionOutlined } from "@mui/icons-material";
 import { useState } from "react";
 
 import {
   RegexSearchContainer,
   RegexSearchInput,
-  RegexTextFieldContainer,
   RegexTextField,
 } from "./RegexSearchElements";
 
-import { handleSearchChange, handleTextFieldChange } from "../../utils/helpers";
+import {
+  handleSearchChange,
+  handleTextFieldChange,
+  testRegexLowercase,
+  testRegexUppercase,
+  testNumeric,
+  testSpecialChar,
+} from "../../utils/helpers";
 
-export const RegexSearch = ({ isOpen }) => {
-  const [searchTerm, setSearchTerm] = useState("//g");
+export const RegexSearch = ({ isOpen, theme }) => {
+  const [searchTerm, setSearchTerm] = useState("");
   const [textField, setTextField] = useState([
     {
       id: 1,
@@ -29,29 +34,29 @@ export const RegexSearch = ({ isOpen }) => {
 
   const concatenatedTextField = textField.map((item) => item.text).join("\n");
 
-  const testRegex = (e) => {
-    const hasLowercase = /[a-z]/.test(e.target.value);
-    if (hasLowercase) console.log("found");
-  };
-
   return (
     <>
       <RegexSearchContainer $isOpen={isOpen}>
+        <label style={{ fontSize: "14px" }}>REGULAR EXPRESSION</label>
         <RegexSearchInput
+          placeholder="enter your regular expression here"
+          value={searchTerm}
           onChange={(e) => {
             handleSearchChange(e, setSearchTerm);
-            testRegex(e);
+            // testRegexLowercase(e);
+            // testRegexUppercase(e);
+            // testNumeric(e);
           }}
-          value={searchTerm}
+          theme={theme}
         />
-      </RegexSearchContainer>
-      <RegexTextFieldContainer $isOpen={isOpen}>
+        <label style={{ fontSize: "14px" }}>TEXT FIELD</label>
         <RegexTextField
-          placeholder={"Enter some text"}
+          placeholder={"insert your test string here"}
           value={concatenatedTextField}
           onChange={(e) => handleTextFieldChange(e, setTextField)}
+          theme={theme}
         />
-      </RegexTextFieldContainer>
+      </RegexSearchContainer>
     </>
   );
 };

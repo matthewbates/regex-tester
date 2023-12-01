@@ -17,28 +17,15 @@ export const SidebarContainer = styled.div`
 export const SidebarWrapper = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
-  gap: 1em;
   border-bottom: 1px solid rgba(240, 241, 242, 0.09);
-  color: #b7bcc0;
   cursor: pointer;
-
-  &:hover {
-    color: #ffffff;
-    background: #3f4346;
-
-    span {
-      color: #ffffff;
-    }
-  }
 `;
 
 export const SidebarItems = styled.div`
   display: flex;
   align-items: center;
-
   gap: 0.5em;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   padding: 0.75em;
   color: #595f64;
 

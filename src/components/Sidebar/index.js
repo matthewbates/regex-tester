@@ -14,6 +14,7 @@ import { SidebarIcon } from "../SidebarIcon";
 
 import { sidebarIcons } from "../../utils/data";
 import { useClickOutside } from "../../utils/hooks";
+import { Accordion } from "../Accordion";
 
 export const Sidebar = ({ isOpen, setIsOpen, theme }) => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -32,23 +33,25 @@ export const Sidebar = ({ isOpen, setIsOpen, theme }) => {
     <>
       <SidebarContainer $isOpen={isOpen} ref={sidebarRef}>
         {sidebarIcons.map(({ id, name, text, icon }, index) => (
-          <SidebarWrapper
-            key={id}
-            $isOpen={isOpen}
-            index={index}
-            activeIndex={activeIndex}
-          >
-            <SidebarItems
+          <SidebarWrapper key={id} $isOpen={isOpen}>
+            <Accordion
+              name={name}
+              text={text}
+              icon={icon}
+              index={index}
+              isOpen={isOpen}
+              activeIndex={activeIndex}
+              toggle={toggleActiveIndex}
+            />
+            {/* <SidebarItems
               key={id}
               $isOpen={isOpen}
-              index={index}
-              activeIndex={activeIndex}
               onClick={() => toggleActiveIndex(index)}
             >
               <SidebarIcon icon={icon} />
               {isOpen && <span>{name}</span>}
             </SidebarItems>
-            {isOpen && <Arrow />}
+            {isOpen && <Arrow />} */}
             {/* <SidebarContentWrapper
               ref={iconRef}
               style={
@@ -64,10 +67,10 @@ export const Sidebar = ({ isOpen, setIsOpen, theme }) => {
           </SidebarWrapper>
         ))}
       </SidebarContainer>
-      <SearchHeader $isOpen={isOpen} theme={theme}>
+      {/* <SearchHeader $isOpen={isOpen} theme={theme}>
         <p>Expression</p>
-      </SearchHeader>
-      <RegexSearch isOpen={isOpen} />
+      </SearchHeader> */}
+      <RegexSearch isOpen={isOpen} theme={theme} />
     </>
   );
 };

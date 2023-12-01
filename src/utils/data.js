@@ -21,15 +21,23 @@ export const sidebarIcons = [
     text: [
       {
         id: 1,
-        text: "Test 1",
+        text: "Character classes",
       },
       {
         id: 2,
-        text: "Test 2",
+        text: "Anchors",
       },
       {
         id: 3,
-        text: "Test 3",
+        text: "Escaped characters",
+      },
+      {
+        id: 4,
+        text: "Groups & Lookaround",
+      },
+      {
+        id: 5,
+        text: "Quantifiers & Alternation",
       },
     ],
     icon: <DescriptionIcon />,
