@@ -1,15 +1,8 @@
-import { useRef } from "react";
+import { AccordionContainer, AccordionBtn } from "./AccordionElements";
 
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-
-import {
-  AccordionContainer,
-  AccordionBtn,
-  AccordionContentWrapper,
-  AccordionContent,
-} from "./AccordionElements";
-
-import { sidebarIcons } from "../../utils/data";
+import { Arrow } from "../Arrow";
+import { CharacterClasses } from "../CharacterClasses";
+import { AccordionItem } from "../AccordionItem";
 
 export const Accordion = ({
   name,
@@ -20,11 +13,8 @@ export const Accordion = ({
   activeIndex,
   toggle,
 }) => {
-  const iconRef = useRef(null);
-  console.log(text);
-
   return (
-    <AccordionContainer index={index} activeIndex={activeIndex}>
+    <AccordionContainer index={index} activeIndex={activeIndex} isOpen={isOpen}>
       <AccordionBtn
         onClick={() => toggle(index)}
         index={index}
@@ -34,32 +24,28 @@ export const Accordion = ({
         {isOpen && (
           <>
             {name}
-            <KeyboardArrowRightIcon
-              index={index}
-              activeIndex={activeIndex}
-              sx={{
-                display: "flex",
-                marginLeft: "auto",
-                transition: "0.3s ease",
-                transform:
-                  index === activeIndex ? "rotate(90deg)" : "rotate(0deg)",
-              }}
-            />
+            <Arrow index={index} activeIndex={activeIndex} />
           </>
         )}
       </AccordionBtn>
-      <AccordionContentWrapper
+      <AccordionItem index={index} activeIndex={activeIndex} text={text} />
+      {/* <AccordionContentWrapper
         ref={iconRef}
         iconRef={iconRef}
         index={index}
         activeIndex={activeIndex}
       >
         <AccordionContent>
-          {text?.map(({ id, text }, index) => (
-            <div key={id}>{text}</div>
+          {text?.map(({ id, text, types }) => (
+            <>
+              <div key={id}>{text}</div>
+              {id === 1 && <CharacterClasses types={types} />}
+              {id === 2 && <></>}
+              {id === 3 && <></>}
+            </>
           ))}
         </AccordionContent>
-      </AccordionContentWrapper>
+      </AccordionContentWrapper> */}
     </AccordionContainer>
   );
 };

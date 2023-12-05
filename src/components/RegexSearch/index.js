@@ -6,14 +6,7 @@ import {
   RegexTextField,
 } from "./RegexSearchElements";
 
-import {
-  handleSearchChange,
-  handleTextFieldChange,
-  testRegexLowercase,
-  testRegexUppercase,
-  testNumeric,
-  testSpecialChar,
-} from "../../utils/helpers";
+import { handleSearchChange, handleTextFieldChange } from "../../utils/helpers";
 
 export const RegexSearch = ({ isOpen, theme }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -33,6 +26,7 @@ export const RegexSearch = ({ isOpen, theme }) => {
   ]);
 
   const concatenatedTextField = textField.map((item) => item.text).join("\n");
+  const interpunctText = concatenatedTextField.split(" ").join("•");
 
   return (
     <>
@@ -43,16 +37,13 @@ export const RegexSearch = ({ isOpen, theme }) => {
           value={searchTerm}
           onChange={(e) => {
             handleSearchChange(e, setSearchTerm);
-            // testRegexLowercase(e);
-            // testRegexUppercase(e);
-            // testNumeric(e);
           }}
           theme={theme}
         />
         <label style={{ fontSize: "14px" }}>TEXT FIELD</label>
         <RegexTextField
           placeholder={"insert your test string here"}
-          value={concatenatedTextField}
+          value={interpunctText}
           onChange={(e) => handleTextFieldChange(e, setTextField)}
           theme={theme}
         />

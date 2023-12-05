@@ -43,27 +43,6 @@ export const Sidebar = ({ isOpen, setIsOpen, theme }) => {
               activeIndex={activeIndex}
               toggle={toggleActiveIndex}
             />
-            {/* <SidebarItems
-              key={id}
-              $isOpen={isOpen}
-              onClick={() => toggleActiveIndex(index)}
-            >
-              <SidebarIcon icon={icon} />
-              {isOpen && <span>{name}</span>}
-            </SidebarItems>
-            {isOpen && <Arrow />} */}
-            {/* <SidebarContentWrapper
-              ref={iconRef}
-              style={
-                index === activeIndex && iconRef.current
-                  ? { height: iconRef.current.scrollHeight }
-                  : { height: "0px" }
-              }
-            >
-              {text?.map((item, index) => (
-                <div style={{ color: "white" }}>{item.text}</div>
-              ))}
-            </SidebarContentWrapper> */}
           </SidebarWrapper>
         ))}
       </SidebarContainer>

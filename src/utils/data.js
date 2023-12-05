@@ -22,6 +22,27 @@ export const sidebarIcons = [
       {
         id: 1,
         text: "Character classes",
+        types: [
+          {
+            id: 1,
+            name: "character set",
+            characters: "[abc]",
+            description: "Matches any character in the set.",
+          },
+          {
+            id: 2,
+            name: "negated character set",
+            characters: "[^abc]",
+            decription: "Matches any character not in the set.",
+          },
+          {
+            id: 3,
+            name: "range",
+            characters: "[a-c]",
+            description:
+              "matches a character having a character code between the two specified characters inclusive.",
+          },
+        ],
       },
       {
         id: 2,

@@ -12,12 +12,15 @@ export const RegexSearchContainer = styled.div`
 `;
 
 export const RegexSearchInput = styled.input`
-  padding: 0.5em;
+  padding: 1em;
   font-size: 1em;
   font-family: "Source Code Pro";
   background: ${({ theme }) =>
     theme === "dark" && `${CONSTANTS.colors.darkSecondary}`};
-  color: ${({ theme }) => theme === "dark" && `${CONSTANTS.colors.darkText}`};
+  color: ${({ theme }) =>
+    theme === "light"
+      ? `${CONSTANTS.colors.lightText}`
+      : `${CONSTANTS.colors.darkTextField}`};
   border: ${({ theme }) => (theme === "light" ? null : "none")};
 
   &:focus {
@@ -34,12 +37,15 @@ export const RegexTextFieldContainer = styled.div`
 export const RegexTextField = styled.textarea`
   display: flex;
   height: 25vh;
-  padding: 0.5em;
+  padding: 1em;
   font-size: 1em;
   font-family: "Source Code Pro";
   background: ${({ theme }) =>
     theme === "dark" && `${CONSTANTS.colors.darkSecondary}`};
-  color: ${({ theme }) => theme === "dark" && `${CONSTANTS.colors.darkText}`};
+  color: ${({ theme }) =>
+    theme === "light"
+      ? `${CONSTANTS.colors.lightText}`
+      : `${CONSTANTS.colors.darkTextField}`};
   border: ${({ theme }) => (theme === "light" ? null : "none")};
   resize: none;
 
