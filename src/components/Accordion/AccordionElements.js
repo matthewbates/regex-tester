@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const AccordionContainer = styled.div`
   display: flex;
-  /* align-items: ${({ isOpen }) => (isOpen ? "none" : "center")}; */
   flex-direction: column;
   width: 100%;
   overflow: hidden;

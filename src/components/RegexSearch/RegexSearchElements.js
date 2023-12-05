@@ -7,21 +7,26 @@ export const RegexSearchContainer = styled.div`
   display: flex;
   padding: 0.5em;
   flex-direction: column;
-  margin-left: ${({ $isOpen }) => ($isOpen ? "400px" : "50px")};
-  gap: 1em;
+  gap: 0.75em;
+`;
+
+export const Label = styled.label`
+  font-size: 14px;
 `;
 
 export const RegexSearchInput = styled.input`
-  padding: 1em;
+  padding: 0.75em;
   font-size: 1em;
   font-family: "Source Code Pro";
   background: ${({ theme }) =>
-    theme === "dark" && `${CONSTANTS.colors.darkSecondary}`};
+    theme === "light"
+      ? `${CONSTANTS.colors.lightSecondary}`
+      : `${CONSTANTS.colors.darkSecondary}`};
   color: ${({ theme }) =>
     theme === "light"
       ? `${CONSTANTS.colors.lightText}`
       : `${CONSTANTS.colors.darkTextField}`};
-  border: ${({ theme }) => (theme === "light" ? null : "none")};
+  border: none;
 
   &:focus {
     outline: none;
@@ -31,23 +36,16 @@ export const RegexSearchInput = styled.input`
 export const RegexTextFieldContainer = styled.div`
   display: flex;
   padding: 0.5em;
-  margin-left: ${({ $isOpen }) => ($isOpen ? "400px" : "50px")};
 `;
 
-export const RegexTextField = styled.textarea`
-  display: flex;
+export const RegexTextField = styled.div`
   height: 25vh;
-  padding: 1em;
-  font-size: 1em;
+  padding: 0.75em;
   font-family: "Source Code Pro";
   background: ${({ theme }) =>
-    theme === "dark" && `${CONSTANTS.colors.darkSecondary}`};
-  color: ${({ theme }) =>
     theme === "light"
-      ? `${CONSTANTS.colors.lightText}`
-      : `${CONSTANTS.colors.darkTextField}`};
-  border: ${({ theme }) => (theme === "light" ? null : "none")};
-  resize: none;
+      ? `${CONSTANTS.colors.lightSecondary}`
+      : `${CONSTANTS.colors.darkSecondary}`};
 
   &:focus {
     outline: none;

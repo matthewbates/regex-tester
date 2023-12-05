@@ -7,7 +7,7 @@ export const CONSTANTS = {
     darkTextField: "#d7dadc",
     lightBackground: "#ffffff",
     lightSecondary: "rgb(241,242,242)",
-    // lightText: "#000000",
     lightText: "#101112",
+    sidebarBackground: "#282b2d",
   },
 };

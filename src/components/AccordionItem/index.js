@@ -3,6 +3,7 @@ import { useRef } from "react";
 import {
   AccordionContentWrapper,
   AccordionContent,
+  AccordionItemHeader,
 } from "./AccordionItemElements";
 
 import { CharacterClasses } from "../CharacterClasses";
@@ -20,7 +21,7 @@ export const AccordionItem = ({ index, activeIndex, text }) => {
       <AccordionContent>
         {text?.map(({ id, text, types }) => (
           <>
-            <div key={id}>{text}</div>
+            <AccordionItemHeader key={id}>{text}</AccordionItemHeader>
             {id === 1 && <CharacterClasses types={types} />}
             {id === 2 && <></>}
             {id === 3 && <></>}

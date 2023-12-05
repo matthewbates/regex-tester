@@ -1,6 +1,7 @@
 // handles the ability to change the RegEx search term expression
-export const handleSearchChange = (e, setSearchTerm) => {
+export const handleSearchChange = (e, setSearchTerm, callback) => {
   setSearchTerm(e.target.value);
+  callback();
 };
 
 // handles the ability to change the text in <RegexTextField />
@@ -9,26 +10,23 @@ export const handleTextFieldChange = (e, setTextField) => {
   setTextField([{ text: value }]);
 };
 
-// testst the str value for lowercase (a-z)
-export const testRegexLowercase = (e) => {
-  let lowercase = /[a-z]/.test(e.target.value);
-  return lowercase;
+// toggles <Accordion />
+export const toggleActiveIndex = (index, activeIndex, setActiveIndex) => {
+  setActiveIndex(index === activeIndex ? null : index);
 };
 
-// test the str value for uppercase (A-Z)
-export const testRegexUppercase = (e) => {
-  let uppercase = /[A-Z]/.test(e.target.value);
-  return uppercase;
+// handles regex highlighting
+export const highlightedText = (searchTerm, textField) => {
+  const regex = new RegExp(searchTerm, "gi");
+  return textField.replace(regex, (match) => {
+    return `<span style="font-family: Source Code Pro; background-color: #ffff00">${match}</span>`;
+  });
 };
 
-// tests the str value for numeric values
-export const testNumeric = (e) => {
-  let numeric = /[0-9]/.test(e.target.value);
-  return numeric;
-};
+export const testLowercase = () => {};
 
-// tests the str value for special characters
-export const textSpecialChar = (e) => {
-  let specialChar = /[]/.test(e.target.value);
-  return specialChar;
-};
+export const testUppercase = () => {};
+
+export const testInteger = () => {};
+
+export const testSpecialChar = () => {};

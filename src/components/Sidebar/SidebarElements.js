@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { CONSTANTS } from "../../utils/constants";
 
 export const SidebarContainer = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ export const SidebarContainer = styled.div`
   max-width: ${({ $isOpen }) => ($isOpen ? "400px" : "50px")};
   height: 100vh;
   border-right: 1px solid #000000;
-  background: #3a3e41;
+  background: ${CONSTANTS.colors.sidebarBackground};
   flex: ${({ $isOpen }) => ($isOpen ? "1" : "none")};
 `;
 

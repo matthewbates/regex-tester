@@ -29,23 +29,6 @@ export const Accordion = ({
         )}
       </AccordionBtn>
       <AccordionItem index={index} activeIndex={activeIndex} text={text} />
-      {/* <AccordionContentWrapper
-        ref={iconRef}
-        iconRef={iconRef}
-        index={index}
-        activeIndex={activeIndex}
-      >
-        <AccordionContent>
-          {text?.map(({ id, text, types }) => (
-            <>
-              <div key={id}>{text}</div>
-              {id === 1 && <CharacterClasses types={types} />}
-              {id === 2 && <></>}
-              {id === 3 && <></>}
-            </>
-          ))}
-        </AccordionContent>
-      </AccordionContentWrapper> */}
     </AccordionContainer>
   );
 };

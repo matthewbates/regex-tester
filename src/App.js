@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import { About } from "./pages/About";
 import { Navbar } from "./components/Navbar";
 import { Sidebar } from "./components/Sidebar";
+import { RegexSearch } from "./components/RegexSearch";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,10 +27,8 @@ function App() {
         isOpen={isOpen}
         setIsOpen={setIsOpen}
       />
-      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} theme={theme} />
-      {/* <Routes>
-        <Route path="/about" element={<About />}></Route>
-      </Routes> */}
+      {/* <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} theme={theme} /> */}
+      <RegexSearch theme={theme} />
     </div>
   );
 }

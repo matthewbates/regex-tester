@@ -5,7 +5,6 @@ import {
   SidebarWrapper,
   SidebarItems,
   SidebarContentWrapper,
-  SearchHeader,
 } from "./SidebarElements";
 
 import { Arrow } from "../Arrow";
@@ -46,9 +45,6 @@ export const Sidebar = ({ isOpen, setIsOpen, theme }) => {
           </SidebarWrapper>
         ))}
       </SidebarContainer>
-      {/* <SearchHeader $isOpen={isOpen} theme={theme}>
-        <p>Expression</p>
-      </SearchHeader> */}
       <RegexSearch isOpen={isOpen} theme={theme} />
     </>
   );

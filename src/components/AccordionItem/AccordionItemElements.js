@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { CONSTANTS } from "../../utils/constants";
+
 export const AccordionContentWrapper = styled.div`
   transition: 0.3s ease;
   height: ${({ iconRef, index, activeIndex }) =>
@@ -11,5 +13,9 @@ export const AccordionContentWrapper = styled.div`
 export const AccordionContent = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1em;
+`;
+
+export const AccordionItemHeader = styled.div`
+  background: #3a3e41;
+  padding: 0.5em;
 `;
