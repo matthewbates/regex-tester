@@ -7,6 +7,13 @@ import {
   RegexTextField,
 } from "./RegexSearchElements";
 
+import {
+  testLowercase,
+  testUppercase,
+  testInteger,
+  testSpecialChar,
+} from "../../utils/helpers";
+
 export const RegexSearch = ({ isOpen, theme }) => {
   const [searchTerm, setSearchTerm] = useState("[]");
   const [textField, setTextField] = useState("Edit the text to see matches");

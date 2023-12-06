@@ -23,10 +23,28 @@ export const highlightedText = (searchTerm, textField) => {
   });
 };
 
-export const testLowercase = () => {};
+// tests if the regular expression contains lowercase characters
+export const testLowercase = (e) => {
+  const hasLowercase = /[a-z]/.test(e.target.value);
+  return hasLowercase;
+};
 
-export const testUppercase = () => {};
+// tests if the regular expression contains uppercase letters
+export const testUppercase = (e) => {
+  const hasUppercase = /[A-Z]/.test(e.target.value);
+  return hasUppercase;
+};
 
-export const testInteger = () => {};
+//tests if the regular expression contains integers
+export const testInteger = (e) => {
+  const hasInteger = /[0-9]/.test(e.target.value);
+  return hasInteger;
+};
 
-export const testSpecialChar = () => {};
+// tests if the regular expressions contains any sort of special characters
+export const testSpecialChar = () => {
+  const hasSpecialChar = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]+$/g.test(
+    e.target.value
+  );
+  return hasSpecialChar;
+};
